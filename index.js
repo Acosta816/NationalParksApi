@@ -23,7 +23,7 @@ function getParks(park, limit, state){
             myHtml += `<h1>${jsonObject.data[i].fullName}</h1>
                         <h2>${jsonObject.data[i].designation}</h2>
                         <p>${jsonObject.data[i].description}</p>
-                        <a href="${jsonObject.data[i].url}">visit website: ${jsonObject.data[i].url}</a>
+                        <a href="${jsonObject.data[i].url}" target="_blank">visit website: ${jsonObject.data[i].url}</a>
                         <hr>`
         }
 
