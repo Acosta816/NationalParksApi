@@ -3,3 +3,7 @@ ul {
     flex-direction: row;
     text-decoration: none;
 }
+
+li {
+    text-decoration: none;
+}
