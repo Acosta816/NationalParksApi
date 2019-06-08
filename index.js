@@ -43,8 +43,14 @@ function getParks(park, limit, state){
     let url = base+"?"+queryString;
 
     fetch(url)
-    .then(response => response.json())
-    .then(parkData => $('main').html(displayParks(parkData)));
+    .then(response => { 
+        if (response.ok){return response.json();} //if the response returns as .ok (meaning between status code 200-299) then we return the response.json()
+        throw new Error(response.statusText);
+    })
+    .then(parkData => $('main').html(displayParks(parkData)))
+    .catch(err => {
+        $('main').html(`<h2>Whoaa now, looks like this went wrong...  <br>"${err.message}"</h2>`)
+    });//end of catch
 }
 
 
